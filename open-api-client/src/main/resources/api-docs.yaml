@@ -1,0 +1,114 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /api/vehicle/:
+    get:
+      tags:
+      - vehicle-controller
+      operationId: findAll
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vehicle'
+    put:
+      tags:
+      - vehicle-controller
+      operationId: updateVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vehicle'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+    post:
+      tags:
+      - vehicle-controller
+      operationId: createVehicle
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Vehicle'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+  /api/vehicle/{id}:
+    get:
+      tags:
+      - vehicle-controller
+      summary: Get a vehicle by its id
+      operationId: findById
+      parameters:
+      - name: id
+        in: path
+        description: id of vehicle to be searched
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "400":
+          description: Invalid id supplied
+        "200":
+          description: Found the vehicle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Vehicle'
+        "404":
+          description: Vehicle not found
+    delete:
+      tags:
+      - vehicle-controller
+      operationId: deleteVehicle
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        "200":
+          description: OK
+components:
+  schemas:
+    Vehicle:
+      required:
+      - driver
+      - vin
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        vin:
+          maxLength: 20
+          minLength: 0
+          type: string
+        driver:
+          maxLength: 30
+          minLength: 0
+          type: string
