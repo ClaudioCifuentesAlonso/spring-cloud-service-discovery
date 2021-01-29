@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoForSpringdocOpenAPILibraryApplication {
+public class DemoForOpenApiLibraryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoForSpringdocOpenAPILibraryApplication.class, args);
+		SpringApplication.run(DemoForOpenApiLibraryApplication.class, args);
 	}
 
 }
