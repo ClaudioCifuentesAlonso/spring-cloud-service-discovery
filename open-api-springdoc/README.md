@@ -1,9 +1,10 @@
 # Demo for springdoc-openapi library
 
-In this application we created a simple vehicle API to use springdoc-openapi-ui library to demostrate the use of the Swagger UI and the OpenAPI specification.
+In this application we created a simple vehicle API to use springdoc-openapi-ui library to demonstrate the use of the Swagger UI and the OpenAPI specification.
 
 ## Configuration
-Because we want to register this service with the Eureka server we need the following configuration:
+
+```application.yml``` file:
 
 ```
 spring:
@@ -13,6 +14,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+```
+
+```application.properties``` file:
+```
+springdoc.api-docs.path=/api-docs
 ```
 
 ## Usage
