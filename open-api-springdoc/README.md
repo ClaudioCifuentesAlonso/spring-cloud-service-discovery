@@ -27,8 +27,3 @@ Additionally, if you want to create the corresponding docker image you can execu
 ```
 docker build -t claudio/spring-doc-openapi:latest .
 ```
-
-To run the application using the image:
-
-```
-docker run -p 8080:8080 claudio/spring-doc-openapi:latest

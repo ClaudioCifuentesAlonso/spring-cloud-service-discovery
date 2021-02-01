@@ -26,8 +26,3 @@ Additionally, if you want to create the corresponding docker image you can execu
 ```
 docker build -t claudio/eureka-server:latest .
 ```
-
-To run the application using the image:
-
-```
-docker run -p 8761:8761 claudio/eureka-server:latest

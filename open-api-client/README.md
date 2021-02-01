@@ -21,10 +21,5 @@ Additionally, if you want to create the corresponding docker image you can execu
 ```Dockerfile```):
 
 ```
-docker build -t claudio/open-api-client:latest .
+docker build -t claudio/open-api-feing-client:latest .
 ```
-
-To run the application using the image:
-
-```
-docker run -p 8088:8088 claudio/open-api-client:latest
