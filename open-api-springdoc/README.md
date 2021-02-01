@@ -21,6 +21,21 @@ eureka:
 mvn spring-boot:run
 ```
 
+OpenAPI spec (JSON format):
+```
+http://localhost:8080/api-docs
+```
+
+YAML format:
+```
+http://localhost:8080/api-docs.yaml
+```
+
+Swagger-UI:
+```
+http://localhost:8080/swagger-ui.html
+```
+
 Additionally, if you want to create the corresponding docker image you can execute (inside the open-api-springdoc folder where we have the
 ```Dockerfile```):
 
