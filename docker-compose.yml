@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  eureka-server:
+    image: claudio/eureka-server
+    ports:
+      - 8761:8761
+  open-api-springdoc:
+    image: claudio/spring-doc-openapi
+    ports:
+      - 8080:8080
+    environment:
+    # This will override the property in the container
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka    
+    depends_on:
+      - eureka-server
+  open-api-feign-client:
+    image: claudio/open-api-feign-client
+    ports:
+      - 8888:8888
+    environment:
+    # This will override the property in the container
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka    
+    depends_on:
+      - eureka-server
+      - open-api-springdoc

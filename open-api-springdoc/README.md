@@ -21,7 +21,7 @@ eureka:
 mvn spring-boot:run
 ```
 
-Additionally, if you want to create the corresponding docker image you can execute (inside the open-api-springdoc folder where we hace the
+Additionally, if you want to create the corresponding docker image you can execute (inside the open-api-springdoc folder where we have the
 ```Dockerfile```):
 
 ```

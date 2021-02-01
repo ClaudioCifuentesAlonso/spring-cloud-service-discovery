@@ -14,10 +14,20 @@ eureka:
     fetchRegistry: false
 ```
 
-## Execution
+## Usage
 
-Execute the following command:
-
-```bash
+```
 mvn spring-boot:run
 ```
+
+Additionally, if you want to create the corresponding docker image you can execute (inside the eureka-server folder where we have the
+```Dockerfile```):
+
+```
+docker build -t claudio/eureka-server:latest .
+```
+
+To run the application using the image:
+
+```
+docker run -p 8761:8761 claudio/eureka-server:latest
